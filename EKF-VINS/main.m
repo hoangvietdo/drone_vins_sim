@@ -142,7 +142,6 @@ for i = 1:1:length(gT.Time)
                 H = [];
 
                 number_of_deteted_feature = length(hash_map);
-%                 P_aug = zeros(15 + number_of_deteted_feature * 3, 15 + number_of_deteted_feature * 3);
 
                 for ii = 1:1:number_of_deteted_feature
                     foo = Camera.FeatureMeasurement(:, hash_map(ii), n);
@@ -165,10 +164,7 @@ for i = 1:1:length(gT.Time)
                     G = (Camera.Intrinsic(1, 1) / Z) * [1, 0, -X / Z;...
                         0, 1, -Y / Z]; % Appendix C in my thesis, equation C.3
 
-%                     H_j = G * C_I_C * C_G_I;
                     H_x = G * C_I_C * C_G_I * [-I_3, Z_3, -skewSymmetricMatrix(p_f_G - current_position), Z_3, Z_3]; % Appendix C in my thesis, equation C.8
-
-                    % H = [H; [H_x, H_j]];
                     H = [H; H_x]; % stacking the feature measurement, 1 feature -> H = 2x15, 10 features -> H = 20 x 15
                 end
 
@@ -177,7 +173,6 @@ for i = 1:1:length(gT.Time)
                 R_inv = inv(R);
                 P_inv = inv(P_current_priori);
                 Kalman_gain = inv(H' * R_inv * H + P_inv) * H' * R_inv;
-%                 current_state = [current_position; current_vel; quat2euler(q_current); bias_accel_hat; bias_gyro_hat];
 
                 r = y_hat - y_meas;
                 delta_x_posteri = Kalman_gain * r;
