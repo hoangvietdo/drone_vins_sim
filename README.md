@@ -26,7 +26,7 @@ The resulting dataset can be utilized to evaluate the performance of a visual-in
 ## 5. Citation
 If you find this work beneficial to your academic research, we would greatly appreciate it if you could reference our paper in your citations.
 ```bibtex
-@INPROCEEDINGS{do2024amsckf,
+@INPROCEEDINGS{do2021amsckf,
   author={Do, Hoang Viet and Kim, Yong Hun and Kwon, Yeong Seo and Kang, San Hee and Kim, Hak Ju and Song, Jin Woo},
   booktitle={2021 21st International Conference on Control, Automation and Systems (ICCAS)}, 
   title={An Adaptive Approach based on Multi-State Constraint Kalman Filter for UAVs}, 
