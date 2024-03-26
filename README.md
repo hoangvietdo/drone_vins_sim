@@ -16,7 +16,7 @@ The resulting dataset can be utilized to evaluate the performance of a visual-in
 - Additionally, we provide a simplified version of an Extended Kalman Filter for Visual-Inertial Navigation System (EKF-VINS) algorithm to validate the dataset.
 
 <p align="center">
-<img src='/images/results.png' width='640' height='480'>
+<img src='/images/results.png' width='480' height='360'>
 </p>
 
 ## 4. Credit / Acknowledgements
